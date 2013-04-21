@@ -104,7 +104,7 @@
 	
 	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
-	var scene = new cesiumWidget.scene(canvas);
+	var scene = cesiumWidget.scene;
 	layers.removeAll();
 	
 	layers.addImageryProvider(new Cesium.TileMapServiceImageryProvider({
