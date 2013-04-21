@@ -58,7 +58,7 @@
 			    // x = 1000.0*x;
 			    // y = 0;
 			    // z = 0;
-			    rotate(cesiumWidget.scene, x, z, y);
+			    rotate(cesiumWidget.scene, x, y, z);
 			    LeapEx.debug(x + ' ' + y + ' ' + z);
 	
 		//LeapEx.draw(targets);
@@ -181,9 +181,9 @@
 		controller.enableTilt = false;
 		
 		// Zoom in
-		/*camera.controller.lookAt(
+		camera.controller.lookAt(
 		   	new Cesium.Cartesian3(z, z, z),
 		   	Cesium.Cartesian3.ZERO,
-		    Cesium.Cartesian3.UNIT_Z);*/
+		    Cesium.Cartesian3.UNIT_Z);
     }
 
