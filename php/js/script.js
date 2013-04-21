@@ -6,10 +6,10 @@
 	    height: null,
 	    debugEl: null,
 	    el: null,
-	    leapMinX: 20000,
-	    leapMaxX: 220000,
-	    leapMinY: 20000,
-	    leapMaxY: 220000,
+	    leapMinX: -180,
+	    leapMaxX: 180,
+	    leapMinY: -90,
+	    leapMaxY: 90,
 	    leapMinZ: 20000,
 	    leapMaxZ: 220000,
 	    started: false,
@@ -52,9 +52,9 @@
 				if (z < 10) { z = 10; }
 				targets.push({ 'x': x, 'y': y, 'z': z });
 			    }
-			    x = -50000.0 + 100000.0*x;
-			    y = -50000.0 + 100000.0*y;
-			    z = 500000.0+20000.0*z;
+			    //x = -50000.0 + 100000.0*x;
+			    //y = -50000.0 + 100000.0*y;
+			    z = 2500000.0+100000.0*z;
 			    // x = 1000.0*x;
 			    // y = 0;
 			    // z = 0;
@@ -166,22 +166,22 @@
 	}));
     
     function rotate(scene, x, y, z) {
-	var ellipsoid = Cesium.Ellipsoid.WGS84;
-	var center = ellipsoid.cartographicToCartesian(Cesium.Cartographic.fromDegrees(-75.59777, 40.03883));
-	var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
-	
-	// View in east-north-up frame
-	var camera = scene.getCamera();
-	camera.transform = transform;
-	camera.controller.constrainedAxis = Cesium.Cartesian3.UNIT_Z;
-	var controller = scene.getScreenSpaceCameraController();
-	controller.setEllipsoid(Cesium.Ellipsoid.UNIT_SPHERE);
-	controller.enableTilt = false;
-	
-	// Zoom in
-	camera.controller.lookAt(
-	    new Cesium.Cartesian3(x, y, z),
-	    Cesium.Cartesian3.ZERO,
-	    Cesium.Cartesian3.UNIT_Z);
-    }
+		var ellipsoid = Cesium.Ellipsoid.WGS84;
+		var center = ellipsoid.cartographicToCartesian(Cesium.Cartographic.fromDegrees(x, y));
+		var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
+		
+		// View in east-north-up frame
+		var camera = scene.getCamera();
+		camera.transform = transform;
+		camera.controller.constrainedAxis = Cesium.Cartesian3.UNIT_Z;
+		var controller = scene.getScreenSpaceCameraController();
+		controller.setEllipsoid(Cesium.Ellipsoid.UNIT_SPHERE);
+		controller.enableTilt = false;
+		
+		// Zoom in
+		camera.controller.lookAt(
+		    new Cesium.Cartesian3(z, z, z),
+		    Cesium.Cartesian3.ZERO,
+		    Cesium.Cartesian3.UNIT_Z);
+	    }
 
