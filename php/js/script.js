@@ -1,4 +1,3 @@
-$(document).ready(function() {
 
 	var LeapEx = {
 	    ws: null,
@@ -185,7 +184,4 @@ $(document).ready(function() {
 	    Cesium.Cartesian3.ZERO,
 	    Cesium.Cartesian3.UNIT_Z);
     }
-
-
-});
 
