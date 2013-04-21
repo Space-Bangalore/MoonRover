@@ -180,9 +180,9 @@
 		controller.enableTilt = false;
 		
 		// Zoom in
-		camera.controller.lookAt(
-		   	new Cesium.Cartesian3(z, z, z),
-		   	Cesium.Cartesian3.ZERO,
-		    Cesium.Cartesian3.UNIT_Z);
+		//camera.controller.lookAt(
+		   	//new Cesium.Cartesian3(z, z, z),
+		   	//Cesium.Cartesian3.ZERO,
+		    //Cesium.Cartesian3.UNIT_Z);
     }
 
