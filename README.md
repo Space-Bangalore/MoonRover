@@ -1,6 +1,6 @@
-<p align="center">
+<p align="Left">
 	<img src="http://spaceappschallenge.org/static/images/spaceappschallenge-125x129.png" />
-	<span>Moon Rover</span>
+	<tb/><h2>Moon Rover</h2>
 </p>
 
 Moon rover gives a 3D tour of the moon
