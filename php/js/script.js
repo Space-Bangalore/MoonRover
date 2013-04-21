@@ -60,5 +60,23 @@
 		Cesium.Math.toRadians(30.77168+de),
 		Cesium.Math.toRadians(20.19080+dn))
 	}));
+    
+    function rotate(scene, x, y, z) {
+	var ellipsoid = Cesium.Ellipsoid.WGS84;
+	var center = ellipsoid.cartographicToCartesian(Cesium.Cartographic.fromDegrees(-75.59777, 40.03883));
+	var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
+// View in east-north-up frame
+	var camera = scene.getCamera();
+	camera.transform = transform;
+	camera.controller.constrainedAxis = Cesium.Cartesian3.UNIT_Z;
+	var controller = scene.getScreenSpaceCameraController();
+	controller.setEllipsoid(Cesium.Ellipsoid.UNIT_SPHERE);
+	controller.enableTilt = false;
+// Zoom in
+	camera.controller.lookAt(
+	    new Cesium.Cartesian3(x, y, z),
+	    Cesium.Cartesian3.ZERO,
+	    Cesium.Cartesian3.UNIT_Z);
+    }
 
 })(Cesium,window.document,document);
