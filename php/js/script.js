@@ -105,6 +105,7 @@
 	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
 	var scene = cesiumWidget.scene;
+	var controller = scene.getCamera().controller;
 	layers.removeAll();
 	
 	layers.addImageryProvider(new Cesium.TileMapServiceImageryProvider({
@@ -179,9 +180,9 @@
 		controller.enableTilt = false;
 		
 		// Zoom in
-		//camera.controller.lookAt(
-		   // new Cesium.Cartesian3(z, z, z),
-		   // Cesium.Cartesian3.ZERO,
-		    //Cesium.Cartesian3.UNIT_Z);
+		camera.controller.lookAt(
+		   	new Cesium.Cartesian3(z, z, z),
+		   	Cesium.Cartesian3.ZERO,
+		    Cesium.Cartesian3.UNIT_Z);
     }
 
