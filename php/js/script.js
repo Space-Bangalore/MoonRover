@@ -1,9 +1,9 @@
-(function(Cesium,window,document,undefined) {
-    $(document).ready(function() {
+$(document).ready(function() {
 	LeapEx.init('#canvas', '#debug');
-    });
+    
 
-	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
+
+    	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
 	layers.removeAll();
 	
@@ -83,4 +83,6 @@
 	    Cesium.Cartesian3.UNIT_Z);
     }
 
-})(Cesium,window.document,document);
+
+});
+
