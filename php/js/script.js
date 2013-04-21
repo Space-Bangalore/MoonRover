@@ -1,6 +1,5 @@
 $(document).ready(function() {
-	LeapEx.init('#canvas', '#debug');
-	
+
 	var LeapEx = {
 	    ws: null,
 	    ctx: null,
@@ -62,7 +61,8 @@ $(document).ready(function() {
 			    // z = 0;
 			    rotate(cesiumWidget.scene, x, z, y);
 			    LeapEx.debug(x + ' ' + y + ' ' + z);
-	//LeapEx.draw(targets);
+	
+		//LeapEx.draw(targets);
 			}
 		    }
 		};
@@ -101,9 +101,11 @@ $(document).ready(function() {
 	    }
 	};    
 
-
-    	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
+	LeapEx.init('#canvas', '#debug');
+	
+	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
+	var scene = new cesiumWidget.scene(canvas);
 	layers.removeAll();
 	
 	layers.addImageryProvider(new Cesium.TileMapServiceImageryProvider({
@@ -168,14 +170,16 @@ $(document).ready(function() {
 	var ellipsoid = Cesium.Ellipsoid.WGS84;
 	var center = ellipsoid.cartographicToCartesian(Cesium.Cartographic.fromDegrees(-75.59777, 40.03883));
 	var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
-// View in east-north-up frame
+	
+	// View in east-north-up frame
 	var camera = scene.getCamera();
 	camera.transform = transform;
 	camera.controller.constrainedAxis = Cesium.Cartesian3.UNIT_Z;
 	var controller = scene.getScreenSpaceCameraController();
 	controller.setEllipsoid(Cesium.Ellipsoid.UNIT_SPHERE);
 	controller.enableTilt = false;
-// Zoom in
+	
+	// Zoom in
 	camera.controller.lookAt(
 	    new Cesium.Cartesian3(x, y, z),
 	    Cesium.Cartesian3.ZERO,
