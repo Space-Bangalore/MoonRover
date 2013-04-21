@@ -54,7 +54,7 @@
 			    }
 			    //x = -50000.0 + 100000.0*x;
 			    //y = -50000.0 + 100000.0*y;
-			    z = 2500000.0+20000.0*z;
+			    z = 250000.0+2000.0*z;
 			    // x = 1000.0*x;
 			    // y = 0;
 			    // z = 0;
@@ -183,5 +183,5 @@
 		    new Cesium.Cartesian3(z, z, z),
 		    Cesium.Cartesian3.ZERO,
 		    Cesium.Cartesian3.UNIT_Z);
-	    }
+    }
 
