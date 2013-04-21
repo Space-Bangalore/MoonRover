@@ -167,6 +167,7 @@
 	}));
     
     function rotate(scene, x, y, z) {
+    	console.log(x+":"+y+":"+z);
 		var ellipsoid = Cesium.Ellipsoid.WGS84;
 		var center = ellipsoid.cartographicToCartesian(Cesium.Cartographic.fromDegrees(x, y));
 		var transform = Cesium.Transforms.eastNorthUpToFixedFrame(center);
