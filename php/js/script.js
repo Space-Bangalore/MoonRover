@@ -1,4 +1,8 @@
 (function(Cesium,window,document,undefined) {
+    $(document).ready(function() {
+	LeapEx.init('#canvas', '#debug');
+    });
+
 	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
 	layers.removeAll();
