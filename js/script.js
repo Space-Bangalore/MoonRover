@@ -60,5 +60,14 @@
 		Cesium.Math.toRadians(30.77168+de),
 		Cesium.Math.toRadians(20.19080+dn))
 	}));
-		
+	
+	function rotate(scene) {
+        var destination = Cesium.Cartographic.fromDegrees(0,10,1000000);
+		var flight = Cesium.CameraFlightPath.createAnimationCartographic(scene.getFrameState(), {
+			destination : destination
+		});
+		scene.getAnimations().add(flight);
+    }
+	setTimeout(function(){rotate(cesiumWidget.scene)},1000);
+	
 })(Cesium,window.document,document);
