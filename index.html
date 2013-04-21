@@ -3,39 +3,11 @@
   <head>
     <title>Moon Rover</title>
     <script type="text/javascript" src="Cesium/Cesium.js"></script>
-    <style>
-      @import url(Cesium/Widgets/CesiumWidget/CesiumWidget.css);
-      body {	
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-      }
-    </style>
+	<link rel="stylesheet" href="./css/style.css"/>
+	<link rel="stylesheet" href="./Cesium/Widgets/CesiumWidget/CesiumWidget.css"/>
   </head>
 <body>
-  <div id="cesiumContainer"></div>
-  <script type="text/javascript" >
-	(function(Cesium,window,document,undefined) {
-		var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
-		var layers = cesiumWidget.centralBody.getImageryLayers();
-		layers.removeAll();
-		
-		layers.addImageryProvider(new Cesium.TileMapServiceImageryProvider({
-			url : './images/',
-			fileExtension: 'jpg',
-			maximumLevel: 1		
-		}));
-		
-		/*layers.addImageryProvider(new Cesium.SingleTileImageryProvider({
-        url : './images/astro-icon.gif',
-        extent : new Cesium.Extent(
-            Cesium.Math.toRadians(-75.0),
-            Cesium.Math.toRadians(25.0),
-            Cesium.Math.toRadians(-70.0),
-            Cesium.Math.toRadians(30.0))
-		}));*/
-		
-	})(Cesium,window.document,document);
-  </script>
+	<div id="cesiumContainer"></div>
+	<script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>
