@@ -4,7 +4,7 @@
 <SRS>EPSG:900913</SRS>
 <BoundingBox minx="-90.00000000000000" miny="-180.00000000000000" maxx="90.00000000000000" maxy="180.00000000000000"/>
 <Origin x="0.00000000000000" y="0.00000000000000"/>
-<TileFormat width="2048" height="2048" mime-type="image/jpg" extension="jpg"/>
+<TileFormat width="512" height="512" mime-type="image/jpg" extension="jpg"/>
 <TileSets profile="mercator">
 <TileSet href="8" units-per-pixel="611.49622617187504" order="8"/>
 </TileSets>
