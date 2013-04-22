@@ -1,5 +1,6 @@
 $(document).ready(function(){
-	
+    
+    alert("Moon Rover uses WebGL, so it only runs on the latest Chrome Browser.");
 	var cesiumWidget = new Cesium.CesiumWidget('cesiumContainer');
 	var layers = cesiumWidget.centralBody.getImageryLayers();
 	var scene = cesiumWidget.scene;
